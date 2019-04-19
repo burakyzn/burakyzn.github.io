@@ -1,0 +1,66 @@
+#footer {
+    background-color:#353A41;
+    color: white;
+}
+
+#footer .footer-aciklama{
+    margin-top: 10px;
+}
+
+#footer .banaulasin .footer-aciklama p{
+    color:white;
+    font-size: 18px;
+    float: left;
+    line-height: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+#footer a {
+    color: #d2d1d1;
+    text-decoration: none;
+}
+
+#footer a:hover,
+#footer a:focus {
+    text-decoration: none;
+    color: white;
+}
+
+#footer .banaulasin {
+    text-align: center;
+    background-color: #353A41;
+    text-align: center;
+}
+
+#footer .banaulasin a {
+    font-size: 22px;
+    color: #9fa3a9;
+    padding: 10px;
+    transition: 0.2s;
+    line-height: 50px;
+}
+
+#footer .banaulasin a:hover {
+    text-decoration: none;
+}
+
+#footer .social-icons {
+    float:right;
+}
+
+#footer .facebook:hover {
+    color: #0077e2;
+}
+
+#footer .instagram:hover {
+    color: brown;
+}
+
+#footer .github:hover {
+    color: #ffffff;
+}
+
+#footer .linkedin:hover {
+    color: #00aced;
+}
