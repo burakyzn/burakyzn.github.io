@@ -103,14 +103,6 @@ a {
   color:white;
 }
 
-.home-section {
-  padding-top: 120px;
-  padding-bottom: 110px;
-  display:block;
-  position:relative;
-  z-index:120;
-}
-
 .hakkimda{
   background-image: url("../images/backgrounds/arkaplan6.jpg")
 }
@@ -165,3 +157,17 @@ a {
   font-weight: 500;
   margin-bottom: 5px;
   display: block; }
+
+  .carousel{
+    background: #2f4357;
+    margin-top: 20px;
+}
+.carousel .item{
+    min-height: 280px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+}
+.carousel .item img{
+    margin: 0 auto; /* Align slide image horizontally center */
+}
+.bs-example{
+	margin: 20px;
+}
