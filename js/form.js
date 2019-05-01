@@ -18,8 +18,15 @@ function formKontrolTR(frm)
     var telefon = frm.telefon.value;
     var mesaj = frm.mesaj.value;
     var email = frm.email.value;
+    var isicin = document.getElementById("isamaci");
+    var kisiselicin = document.getElementById("kisiselamaci");
     var atpos=email.indexOf("@");
     var dotpos=email.lastIndexOf(".");
+    
+    if( isicin.checked == false && kisiselicin.checked == false){
+        alert("Ulaşma sebebi boş bırakılamaz.");
+        return false;
+    }
     if ( isim==null || isim=="")
     {
         alert("İsim alani bos birakilamaz.");
