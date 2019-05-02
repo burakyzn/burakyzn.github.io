@@ -56,8 +56,15 @@ function formKontrolEN(frm)
     var telefon = frm.telefon.value;
     var mesaj = frm.mesaj.value;
     var email = frm.email.value;
+    var isicin = document.getElementById("isamaci");
+    var kisiselicin = document.getElementById("kisiselamaci");
     var atpos=email.indexOf("@");
     var dotpos=email.lastIndexOf(".");
+
+    if( isicin.checked == false && kisiselicin.checked == false){
+        alert("Reason for reaching can not be left blank.");
+        return false;
+    }
     if ( isim==null || isim=="")
     {
         alert("Name field cannot be empty.");
