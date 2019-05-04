@@ -18,15 +18,13 @@ function formKontrolTR(frm)
     var telefon = frm.telefon.value;
     var mesaj = frm.mesaj.value;
     var email = frm.email.value;
+    var onay = document.getElementById('onaykutusu');
     var isicin = document.getElementById("isamaci");
     var kisiselicin = document.getElementById("kisiselamaci");
     var atpos=email.indexOf("@");
     var dotpos=email.lastIndexOf(".");
     
-    if( isicin.checked == false && kisiselicin.checked == false){
-        alert("Ulaşma sebebi boş bırakılamaz.");
-        return false;
-    }
+    
     if ( isim==null || isim=="")
     {
         alert("İsim alani bos birakilamaz.");
@@ -47,6 +45,14 @@ function formKontrolTR(frm)
         alert("Mesaj alani boş bırakılamaz.");
         return false;
     }
+    if( isicin.checked == false && kisiselicin.checked == false){
+        alert("Ulaşma sebebi boş bırakılamaz.");
+        return false;
+    }
+    if( onay.checked == false){
+        alert('Kullanım koşulları kabul edilmelidir.');
+        return false;
+    }
     return true;
 }
 
@@ -56,15 +62,13 @@ function formKontrolEN(frm)
     var telefon = frm.telefon.value;
     var mesaj = frm.mesaj.value;
     var email = frm.email.value;
+    var onay = document.getElementById('onaykutusu');
     var isicin = document.getElementById("isamaci");
     var kisiselicin = document.getElementById("kisiselamaci");
     var atpos=email.indexOf("@");
     var dotpos=email.lastIndexOf(".");
 
-    if( isicin.checked == false && kisiselicin.checked == false){
-        alert("Reason for reaching can not be left blank.");
-        return false;
-    }
+    
     if ( isim==null || isim=="")
     {
         alert("Name field cannot be empty.");
@@ -83,6 +87,14 @@ function formKontrolEN(frm)
     if ( mesaj==null || mesaj=="")
     {
         alert("Message field cannot be left blank.");
+        return false;
+    }
+    if( isicin.checked == false && kisiselicin.checked == false){
+        alert("Reason for reaching can not be left blank.");
+        return false;
+    }
+    if( onay.checked == false){
+        alert("Terms of use must be accepted.");
         return false;
     }
     return true;
