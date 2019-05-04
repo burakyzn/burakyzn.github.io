@@ -58,7 +58,7 @@
         <span class="iletisim">Gönderen Mail Adresi : </span> <span><?php echo "$_email" ?></span><br>
         <span class="iletisim">Gönderen Telefon No : </span> <span><?php echo "$_telefon" ?></span><br>
         <span class="iletisim">Gönderen Ulaşım Tercihi : </span> <span><?php echo "$_ulasim" ?></span><br>
-        <span class="iletisim">Gönderen Gönderen : </span> <span><?php echo "$_mesaj" ?></span>
+        <span class="iletisim">Gönderen Mesaj : </span> <span><?php echo "$_mesaj" ?></span>
       </div>
   </div>
 
