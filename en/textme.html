@@ -56,21 +56,21 @@
 					</div>
 				</div>
 				<div class="col-md-7 mb-5 mb-md-0">
-					<form id="iletisim" action="contact.php" method="POST" onsubmit="return formKontrolEN(this)"
+					<form id="iletisim" action="./contact.php" method="POST" onsubmit="return formKontrolEN(this)"
 						class="site-form">
 						<h3 class="mb-1">Contact me :)</h3>
 						<div class="form-group">
-							<input type="text" id="isim" class="form-control px-3 py-3" placeholder="Your Name">
+							<input type="text" id="isim" name="isim" class="form-control px-3 py-3" placeholder="Your Name">
 						</div>
 						<div class="form-group">
-							<input type="email" id="email" class="form-control px-3 py-3" placeholder="Your Mail Address">
+							<input type="email" id="email" name="email" class="form-control px-3 py-3" placeholder="Your Mail Address">
 						</div>
 						<div class="form-group">
-							<input type="text" id="telefon" onkeypress="Sayi(event)" class="form-control px-3 py-3"
+							<input type="text" id="telefon" name="telefon" onkeypress="Sayi(event)" class="form-control px-3 py-3"
 								placeholder="Your Phone Number">
 						</div>
 						<div class="form-group">
-							<textarea id="mesaj" class="form-control px-3 py-2" placeholder="You Can Write Here"></textarea>
+							<textarea id="mesaj" name="mesaj" class="form-control px-3 py-2" placeholder="You Can Write Here"></textarea>
 						</div>
 						<div class="form-group">
 							<span>Reason for Reaching: </span>
