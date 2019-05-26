@@ -1,73 +1,100 @@
-let myTodoList = document.querySelector('#todo-list');
+const todoList = document.querySelector('#todo-list');
 
-myTodoList.addEventListener("click", function(event){
-
-    if(event.originalTarget.className == 'fa fa-remove'){
-        // console.log('dogru');
-        // console.log(event.target.parentElement.parentElement);
-        myTodoList.removeChild(event.target.parentElement.parentElement);
-        
-        let todos;
-
-        if(localStorage.getItem("todos") != null){
-            todos = JSON.parse(localStorage.getItem("todos"));
-
-            localStorage.clear();
-
-            let index = todos.indexOf(event.target.parentElement.parentElement.textContent);
-            if (index !== -1)
-            todos.splice(index, 1);
-            
-            if(todos.length == 0)
-            localStorage.clear();
-        
-            localStorage.setItem("todos", JSON.stringify(todos));
-        }      
-    }
-
-})
-
-
-let getTodos = function () {
-    // console.log("Gorevler cekiliyor.");
+function getTodos() {
     let todos;
-    const todoList = document.querySelector('#todo-list');
     todos = JSON.parse(localStorage.getItem("todos"));
 
     if(todos != null){
         console.log(todos);
         for (let i = 0; i < todos.length;i++){
-            const newTodo = document.createElement('li');
-            newTodo.className = 'list-group-item d-flex justify-content-between todos';
-            newTodo.appendChild(document.createTextNode(todos[i]));
-            newTodo.innerHTML += '<a href = "#" class ="delete-item"><i class="fa fa-remove"></i></a>';
+
+            var day = calculateTime(todos[i].todo_day,todos[i].todo_month,todos[i].todo_year);
+
+            const newTodo = document.createElement('div');
+            newTodo.className = 'col-lg-3 card-col';
+            newTodo.innerHTML += '<div class="card" style="width: 18rem;"><div class="card-img-top card-top">' + day + ' Day' +
+            '<div class="card-body"><p class="card-text card-main">'+ todos[i].todo_name +'</p><input type="button" id="btnDelete" class="btn btn-primary" value="Delete"></div></div>';
             newTodo.id = "todo" + todoList.childElementCount;
             todoList.appendChild(newTodo);
         }
     }
 }
 
-let addTodo = function(){
-    // console.log("Gorev ekleniyor.");
-
+function addTodoToLocal(todoName, todoDay, todoMonth, todoYear){
     let todos;
-    const todoName = document.querySelector('#todoName').value;
-    const todoList = document.querySelector('#todo-list');
 
-    const newTodo = document.createElement('li');
-    newTodo.className = 'list-group-item d-flex justify-content-between todos';
-    newTodo.appendChild(document.createTextNode(todoName));
-    newTodo.innerHTML += '<a href = "#" class ="delete-item"><i class="fa fa-remove"></i></a>';
-    newTodo.id = "todo" + todoList.childElementCount;
-    todoList.appendChild(newTodo);
-
-    if(localStorage.getItem("todos") == null){
+    if (localStorage.getItem("todos") == null) {
         todos = [];
+        
     } else {
         todos = JSON.parse(localStorage.getItem("todos"));
+       
     }
 
-    todos.push(newTodo.textContent);
+    var newTodoObj = {
+        todo_name : todoName,
+        todo_day : todoDay,
+        todo_month : todoMonth,
+        todo_year : todoYear 
+    }
+
+    todos.push(newTodoObj);
 
     localStorage.setItem("todos", JSON.stringify(todos));
 }
+
+function calculateTime(day,month,year){
+    var date_today = new Date();
+    var date_todo = new Date(year, month, day, 0, 0, 0, 0);
+
+    var second = Math.floor((date_todo- date_today) / 1000);
+    var minute = Math.floor(second / 60);
+    var hour = Math.floor(minute / 60);
+    var day = Math.floor(hour / 24);
+
+    return day;
+}
+
+function addTodo(){
+    const todoName = document.querySelector('#todoName').value;
+    const todoDay = document.querySelector('#todoDay').value;
+    const todoMonth = document.querySelector('#todoMonth').value;
+    const todoYear = document.querySelector('#todoYear').value;
+
+    var day = calculateTime(todoDay, todoMonth, todoYear);
+
+    const newTodo = document.createElement('div');
+    newTodo.className = 'col-lg-3 card-col';
+    newTodo.innerHTML += '<div class="card" style="width: 18rem;"><div class="card-img-top card-top">' + day + ' Day' +
+    '<div class="card-body"><p class="card-text card-main">'+ todoName +'</p><input type="button" id="btnDelete" class="btn btn-primary" value="Delete"></div></div>';
+    newTodo.id = "todo" + todoList.childElementCount;
+    todoList.appendChild(newTodo);
+
+    addTodoToLocal(todoName, todoDay, todoMonth, todoYear);
+}
+
+todoList.addEventListener("click", function(event){
+
+    console.log(event.target);
+
+    if(event.target.id= 'btnDelete' && event.target.className != 'card-text card-main'){
+        todoList.removeChild(event.target.parentElement.parentElement.parentElement.parentElement);
+
+        if (localStorage.getItem("todos") != null) {
+            let todos = JSON.parse(localStorage.getItem("todos"));
+            localStorage.clear();
+
+            for (var i = 0 ; i < todos.length; i++){
+                if(todos[i].todo_name == event.target.parentElement.firstChild.textContent){
+                    todos.splice(i,1);
+                    break;
+                }
+            }
+
+            if (todos.length == 0)
+                 localStorage.clear();
+
+            localStorage.setItem("todos", JSON.stringify(todos));
+        }
+    }
+})

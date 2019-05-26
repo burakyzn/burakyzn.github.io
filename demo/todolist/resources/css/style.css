@@ -5,3 +5,16 @@ h1{
 .todos{
     margin: 10px;
 }
+
+.card-top{
+    text-align: center; 
+    font-size: 30px;
+}
+
+.card-main{
+    text-align: center;
+}
+
+.card-col{
+    margin-top:10px;
+}
