@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="./src/dist/css/style.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <p id="lon"</p>
+    <p id="lat"></p>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <div id="today">Today</div>
+                <div class="mt-2" id="lastUpdated"></div>
+            </div>                    
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <p id="city"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <p id="weatherDep"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-sm-12">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" id="day1">
+                            <div class="card" style="width: 18rem;">
+                                    <div class="degrees" id="todayDeg"></div>
+                                    <div class="image" id="todayImg"></div>
+                                    <div class="weaterDep" id="todayDate"></div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" id="day2">
+                            <div class="card" style="width: 18rem;">
+                                    <div class="degrees" id="day2Deg"></div>
+                                    <div class="image" id="day2Img"></div>
+                                    <div class="weaterDep" id="day2Date"></div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" id="day3">
+                            <div class="card" style="width: 18rem;">
+                                <ul class="list-group list-group-flush">
+                                    <div class="degrees" id="day3Deg"></div>
+                                    <div class="image" id="day3Img"></div>
+                                    <div class="weaterDep" id="day3Date"></div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" id="day4">
+                            <div class="card" style="width: 18rem;">
+                                <ul class="list-group list-group-flush">
+                                    <div class="degrees" id="day4Deg"></div>
+                                    <div class="image" id="day4Img"></div>
+                                    <div class="weaterDep" id="day4Date"></div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" id="day5">
+                            <div class="card" style="width: 18rem;">
+                                <ul class="list-group list-group-flush">
+                                    <div class="degrees" id="day5Deg"></div>
+                                    <div class="image" id="day5Img"></div>
+                                    <div class="weaterDep" id="day5Date"></div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" id="day6">
+                            <div class="card" style="width: 18rem;">
+                                <ul class="list-group list-group-flush">
+                                    <div class="degrees" id="day6Deg"></div>
+                                    <div class="image" id="day6Img"></div>
+                                    <div class="weaterDep" id="day6Date"></div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" id="day7">
+                            <div class="card" style="width: 18rem;">
+                                <ul class="list-group list-group-flush">
+                                    <div class="degrees" id="day7Deg"></div>
+                                    <div class="image" id="day7Img"></div>
+                                    <div class="weaterDep" id="day7Date"></div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" id="day8">
+                            <div class="card" style="width: 18rem;">
+                                <ul class="list-group list-group-flush">
+                                    <div class="degrees" id="day8Deg"></div>
+                                    <div class="image" id="day8Img"></div>
+                                    <div class="weaterDep" id="day8Date"></div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" id="day9">
+                            <div class="card" style="width: 18rem;">
+                                <ul class="list-group list-group-flush">
+                                    <div class="degrees" id="day9Deg"></div>
+                                    <div class="image" id="day9Img"></div>
+                                    <div class="weaterDep" id="day9Date"></div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="swiper-slide" id="day10">
+                            <div class="card" style="width: 18rem;">
+                                <ul class="list-group list-group-flush">
+                                    <div class="degrees" id="day10Deg"></div>
+                                    <div class="image" id="day10Img"></div>
+                                    <div class="weaterDep" id="day10Date"></div>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-4 col-sm-12">
+                <div class="leftcol ml-5 image" id="clouds"></div>
+                <div class="rightcol mr-5 image" id="cloudsvalue"></div> 
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-4 col-sm-12">
+                    <div class="leftcol ml-5 image" id="hightemp"></div>
+                    <div class="rightcol mr-5 image" id="highvalue"></div>
+            </div>
+        </div>
+        <div class="row mt-2">
+                <div class="col-lg-4 col-sm-12">
+                    <div class="leftcol ml-5 image" id="lowtemp"></div>
+                    <div class="rightcol mr-5 image" id="lowvalue"></div>
+                </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-4 col-sm-12">
+                <div class="leftcol ml-5 image" id="wind"></div>
+                <div class="rightcol mr-5 image" id="windvalue"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="./src/dist/js/main.min.js"></script>
+</body>
+</html>
