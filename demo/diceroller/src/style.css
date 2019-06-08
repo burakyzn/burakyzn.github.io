@@ -1,0 +1,56 @@
+html, body, .container-fluid{
+    height: 100%;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.col-12{
+    text-align:center;
+    width: 100%;
+}
+
+.col-12 button{
+    width: 100%;
+}
+
+.dice-height{
+    height: 20%;
+}
+
+.title-height{
+    height : 10%;
+}
+
+.text-height{
+    height: 25%;
+}
+
+.button-height{
+    height : 15%;
+}
+
+@media screen and (max-width: 767px) {
+    .info-text{
+        font-size:35px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .info-text{
+        font-size:45px;
+    }
+}
+
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .info-text{
+        font-size:55px;
+    }
+}
+
+
+@media screen and (min-width: 1200px) {
+    .info-text{
+        font-size:65px;
+    }
+}
