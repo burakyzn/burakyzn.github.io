@@ -1,9 +1,9 @@
-{
-    "Yemekler": [{
-        "Corba": "Domates Çorbası",
-        "AnaYemek": "Şark Usulü Etli Bamya",
-        "AnaYemek2": "Piliç Pirzola",
-        "Yan": "Cevizli Erişte",
-        "Diger": "Komposto"
+﻿{
+    "yemekler": [{
+        "corba": "Domates Çorbası",
+        "anayemek": "Şark Usulü Etli Bamya",
+        "anayemek2": "Piliç Pirzola",
+        "yan": "Cevizli Erişte",
+        "diger": "Komposto"
     }]
 }
